@@ -16,10 +16,10 @@ namespace Decorator.Decorator
         public void MakeCoffee() {
             CoffeeBar.MakeCoffee();
             Console.WriteLine("Ice has been added, new function triggered:\n" +
-                "THE WATERING :D " + watering());
+                "It's called THE WATERING :D " + watering());
         }
         public string watering() {
-            return "\n your drink is being watered because u like to have less taste than other ppl!";
+            return "\n Your drink is being watered because u like to have less taste than other ppl!";
         }
 
     }
