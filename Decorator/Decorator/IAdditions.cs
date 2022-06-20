@@ -7,6 +7,6 @@ namespace Decorator.Decorator
 {
     public interface IAdditions : ICoffeeBar
     {
-        public ICoffeeBar CoffeeBar { get; set; }
+        public ICoffeeBar CoffeeBar { get; }
     }
 }

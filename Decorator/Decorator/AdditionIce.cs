@@ -7,7 +7,7 @@ namespace Decorator.Decorator
 {
     public class AdditionIce : IAdditions
     {
-        public ICoffeeBar CoffeeBar {get; set;}
+        public ICoffeeBar CoffeeBar {get;}
         public AdditionIce(ICoffeeBar coffeeBar)
         {
             CoffeeBar = coffeeBar;

@@ -7,7 +7,7 @@ namespace Decorator.Decorator
 {
     public class AdditionSugar : IAdditions
     {
-        public ICoffeeBar CoffeeBar { get ; set ; }
+        public ICoffeeBar CoffeeBar { get; }
 
         private string state;
         public AdditionSugar(ICoffeeBar coffeeBar)
