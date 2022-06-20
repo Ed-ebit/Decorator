@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Decorator
+namespace facade_for_decorator
 {
     public class CoffeeBarEspresso : ICoffeeBar
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Decorator
+namespace facade_for_decorator
 {
     public interface ICoffeeBar
     {
