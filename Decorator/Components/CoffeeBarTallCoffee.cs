@@ -5,7 +5,7 @@ using System.Text;
 
 namespace facade_for_decorator
 {
-    public class CoffeeBarTallCoffe : ICoffeeBar
+    public class CoffeeBarTallCoffee : ICoffeeBar
     {
         public void MakeCoffee()
         {

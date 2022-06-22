@@ -11,34 +11,38 @@ namespace facade_for_decorator
     {        
         public static void Brew(string choiceCoffee, string choiceAddition)
         {
-            string instanciateCoffee = "facade_for_decorator.CoffeeBar" + choiceCoffee;// + ", facade_for_decorator";
-            Console.WriteLine(instanciateCoffee);
-            Type coffee = Type.GetType(instanciateCoffee);
-            Console.WriteLine(Type.GetType(instanciateCoffee));
-            Console.WriteLine(typeof(CoffeeBarAmericano).AssemblyQualifiedName);
+            ICoffeeBar coffee;
+            IAdditions addition;
+            string instanciateCoffee = "facade_for_decorator.CoffeeBar" + choiceCoffee + ", facade_for_decorator";
+            //Console.WriteLine(instanciateCoffee);
+            Type coffeeType = Type.GetType(instanciateCoffee);
+
+            string instanciateAddition = "facade_for_decorator.Addition" + choiceAddition + ", facade_for_decorator";
+            Type additionType = Type.GetType(instanciateAddition);
+            //Console.WriteLine(Type.GetType(instanciateAddition));
+            //Console.WriteLine(typeof(CoffeeBarAmericano).AssemblyQualifiedName);
             //string coffee = "Coffeebar" + choiceCoffee;
             //Type addition = Type.GetType("Addition" + choiceAddition);
-            if (coffee == null)
+            if (coffeeType == null)
             {
                 throw new Exception("verkackt");
             }
             else
             {
-
-                ICoffeeBar kaffee = (ICoffeeBar)Activator.CreateInstance(coffee);
+                coffee = (ICoffeeBar)Activator.CreateInstance(coffeeType);
             }
 
-            //ICoffeeBar zusatz = (IAdditions)Activator.CreateInstance(addition);
-            //zusatz.MakeCoffee(); 
+            if (additionType == null)
+            {
+                throw new Exception("verkackt");
+            }
+            else
+            {
+                addition = (IAdditions)Activator.CreateInstance(additionType);//braucht Parameterlosen Konstruktor :/
+            }
+            addition.CoffeeBar = coffee;
+            addition.MakeCoffee(); 
 
         }
-
-        //ICoffeeBar kaffee = new TallCoffee();
-        //IAdditions zusatz = new AdditionMilk(kaffee);
-        //zusatz.MakeCoffee();
-        //zusatz = new AdditionSugar(kaffee);
-        //zusatz.MakeCoffee();
-        //zusatz = new AdditionIce(kaffee);
-        //zusatz.MakeCoffee();
     }
 }

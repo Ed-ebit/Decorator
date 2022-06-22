@@ -7,14 +7,9 @@ namespace facade_for_decorator
 {
     public class AdditionSugar : IAdditions
     {
-        public ICoffeeBar CoffeeBar { get; }
+        public ICoffeeBar CoffeeBar { get; set; }
 
         private string state;
-        public AdditionSugar(ICoffeeBar coffeeBar)
-        {
-            CoffeeBar = coffeeBar;
-            state = "sweeetened";
-        }
 
         public void MakeCoffee()
         {

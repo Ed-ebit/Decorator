@@ -7,6 +7,6 @@ namespace facade_for_decorator
 {
     public interface IAdditions : ICoffeeBar
     {
-        public ICoffeeBar CoffeeBar { get; }
+        public ICoffeeBar CoffeeBar { get; set; }
     }
 }

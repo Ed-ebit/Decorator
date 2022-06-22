@@ -7,13 +7,8 @@ namespace facade_for_decorator
 {
     public class AdditionMilk : IAdditions
     {
-        public ICoffeeBar CoffeeBar { get; }
+        public ICoffeeBar CoffeeBar { get; set;}
 
-
-        public AdditionMilk(ICoffeeBar coffeeBar)
-        {
-            CoffeeBar = coffeeBar;
-        }
 
 
         public void MakeCoffee()

@@ -7,11 +7,7 @@ namespace facade_for_decorator
 {
     public class AdditionIce : IAdditions
     {
-        public ICoffeeBar CoffeeBar {get;}
-        public AdditionIce(ICoffeeBar coffeeBar)
-        {
-            CoffeeBar = coffeeBar;
-        }
+        public ICoffeeBar CoffeeBar { get; set; }
 
         public void MakeCoffee() {
             CoffeeBar.MakeCoffee();

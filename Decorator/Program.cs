@@ -1,27 +1,31 @@
 ﻿
-namespace facade_for_decorator {
+namespace facade_for_decorator
+{
     class Program
     {
-        
+
+
+        //public enum CoffeeList
+        //{
+        //    TallCoffee = 1,
+        //    Americano = 2,
+        //    Espresso = 3,
+        //};
+        //public enum AdditionList
+        //{
+        //    Milk = 1,
+        //    Sugar = 2,
+        //    Ice = 3,
+        //};
+
+
         public static void Main()
         {
 
-            //ICoffeeBar kaffee = new TallCoffee();
-            //IAdditions zusatz = new AdditionMilk(kaffee);
-            //zusatz.MakeCoffee();
-            //zusatz = new AdditionSugar(kaffee);
-            //zusatz.MakeCoffee();
-            //zusatz = new AdditionIce(kaffee);
-            //zusatz.MakeCoffee();
-        string choiceCoffee = "";
+            string choiceCoffee = "";
             string choiceAddition = "";
-            List<string> choiceList = new List<string>()
+            while (true)
             {
-                "1",
-                "2",
-                "3",
-            };
-            while (true) {
                 Console.WriteLine("bitte Kaffeesorte aussuchen:\n 1 Großer Kaffee\n2 Americano\n3 Espresso");
                 choiceCoffee = Console.ReadLine();
                 switch (choiceCoffee)
@@ -42,8 +46,6 @@ namespace facade_for_decorator {
                 }
                 break;
             }
-
-
             //case (!choiceList.Contains(choiceCoffee)):
             //    Console.WriteLine("ungültige Eingabe");
             //    Thread.Sleep(800);
@@ -55,13 +57,13 @@ namespace facade_for_decorator {
                 switch (choiceAddition)
                 {
                     case "1":
-                        choiceAddition = "Milch";
+                        choiceAddition = "Milk";
                         break;
                     case "2":
-                        choiceAddition = "Zucker";
+                        choiceAddition = "Sugar";
                         break;
                     case "3":
-                        choiceAddition = "Eiswürfel";
+                        choiceAddition = "Ice";
                         break;
                     default:
                         Console.WriteLine("ungültige Eingabe");
