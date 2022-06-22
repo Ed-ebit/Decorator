@@ -11,12 +11,25 @@ namespace facade_for_decorator
     {        
         public static void Brew(string choiceCoffee, string choiceAddition)
         {
-            Type coffee = Type.GetType("CoffeeBar" + choiceCoffee);
+            string instanciateCoffee = "facade_for_decorator.CoffeeBar" + choiceCoffee;// + ", facade_for_decorator";
+            Console.WriteLine(instanciateCoffee);
+            Type coffee = Type.GetType(instanciateCoffee);
+            Console.WriteLine(Type.GetType(instanciateCoffee));
+            Console.WriteLine(typeof(CoffeeBarAmericano).AssemblyQualifiedName);
             //string coffee = "Coffeebar" + choiceCoffee;
-            Type addition = Type.GetType("Addition" + choiceAddition);
-            ICoffeeBar kaffee = (ICoffeeBar)Activator.CreateInstance(coffee);
-            ICoffeeBar zusatz = (IAdditions)Activator.CreateInstance(addition);
-            zusatz.MakeCoffee(); 
+            //Type addition = Type.GetType("Addition" + choiceAddition);
+            if (coffee == null)
+            {
+                throw new Exception("verkackt");
+            }
+            else
+            {
+
+                ICoffeeBar kaffee = (ICoffeeBar)Activator.CreateInstance(coffee);
+            }
+
+            //ICoffeeBar zusatz = (IAdditions)Activator.CreateInstance(addition);
+            //zusatz.MakeCoffee(); 
 
         }
 

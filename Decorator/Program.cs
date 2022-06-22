@@ -22,59 +22,53 @@ namespace facade_for_decorator {
                 "3",
             };
             while (true) {
-                Console.WriteLine("bitte Kaffeesorte aussuchen:\n 1 Großer Kaffee\n2 Americano\n3 Espreso");
+                Console.WriteLine("bitte Kaffeesorte aussuchen:\n 1 Großer Kaffee\n2 Americano\n3 Espresso");
                 choiceCoffee = Console.ReadLine();
-                if (!choiceList.Contains(choiceCoffee))
+                switch (choiceCoffee)
                 {
-                    Console.WriteLine("ungültige Eingabe");
-                    Thread.Sleep(800);
-                } 
-
-                    if (choiceCoffee == "1")
-                {
-                    choiceCoffee = "TallCoffee";
-                    break;
+                    case "1":
+                        choiceCoffee = "TallCoffee";
+                        break;
+                    case "2":
+                        choiceCoffee = "Americano";
+                        break;
+                    case "3":
+                        choiceCoffee = "Espresso";
+                        break;
+                    default:
+                        Console.WriteLine("ungültige Eingabe");
+                        Thread.Sleep(800);
+                        continue;
                 }
-                if (choiceCoffee == "2")
-                {
-                    choiceCoffee = "Americano";
-                    break;
-                }
-                if (choiceCoffee == "3")
-                {
-                    choiceCoffee = "Espresso";
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("ungültige Eingabe");
-                    Thread.Sleep(800);
-                }
+                break;
             }
+
+
+            //case (!choiceList.Contains(choiceCoffee)):
+            //    Console.WriteLine("ungültige Eingabe");
+            //    Thread.Sleep(800);
+
             while (true)
             {
                 Console.WriteLine("bitte Zusatz aussuchen:\n 1 Milch\n2 Zucker\n3 Eiswürfel");
                 choiceAddition = Console.ReadLine();
-                if (choiceAddition == "1")
+                switch (choiceAddition)
                 {
-                    choiceAddition = "Milk";
-                    break;
+                    case "1":
+                        choiceAddition = "Milch";
+                        break;
+                    case "2":
+                        choiceAddition = "Zucker";
+                        break;
+                    case "3":
+                        choiceAddition = "Eiswürfel";
+                        break;
+                    default:
+                        Console.WriteLine("ungültige Eingabe");
+                        Thread.Sleep(800);
+                        continue;
                 }
-                if (choiceAddition == "2")
-                {
-                    choiceAddition = "Sugar";
-                    break; 
-                }
-                if (choiceAddition == "3")
-                {
-                    choiceAddition = "Ice";
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("ungültige Eingabe");
-                    Thread.Sleep(800);
-                }
+                break;
             }
             Facade.Brew(choiceCoffee, choiceAddition);
 
