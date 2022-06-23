@@ -9,7 +9,7 @@ namespace facade_for_decorator
     {
         public ICoffeeBar CoffeeBar { get; set; }
 
-        private string state;
+        private string state = "sweetened";
 
         public void MakeCoffee()
         {
